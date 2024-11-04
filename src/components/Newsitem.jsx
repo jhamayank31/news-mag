@@ -1,7 +1,14 @@
-
-export const Newsitem = () => {
+import image from '../assets/news image.jpg'
+export const Newsitem = ({title, description, src, url}) => {
   return (
-    <div>Newsitem</div>
+  <div className="card bg-dark text-light mb-3 d-inline-block my-3 mx-3 px-3 py-3" style={{maxWidth:"350px"}}>
+    <img src={src?src:image} style={{height:"210px",width:"330px"}} className="card-img-top" alt="..."/>
+    <div className="card-body">
+      <h5 className="card-title">{title.slice(0,50)}</h5>
+      <p className="card-text">{description?description.slice(0,90):"It is the news of India. Here is the information about the recent occured event."}</p>
+      <a href={url} className="btn btn-primary">Read More</a>
+    </div>
+  </div> 
   )
 }
 export default Newsitem
